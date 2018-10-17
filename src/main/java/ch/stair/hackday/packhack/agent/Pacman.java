@@ -1,13 +1,12 @@
 package ch.stair.hackday.packhack.agent;
 
 import ch.stair.hackday.packhack.dto.Direction;
-import ch.stair.hackday.packhack.dto.SetupConfig;
 
 public class Pacman implements Agent {
     @Override
-    public SetupConfig getAgentInformation() {
+    public String getAgentInformation() {
         //TODO: Implement the Information for your agent here.
-        return new SetupConfig("a");
+        return "MyAgentName";
     }
 
     @Override

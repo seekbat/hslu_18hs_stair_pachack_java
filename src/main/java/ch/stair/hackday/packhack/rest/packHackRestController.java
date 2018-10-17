@@ -4,8 +4,6 @@ import ch.stair.hackday.packhack.agent.Agent;
 import ch.stair.hackday.packhack.agent.Pacman;
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.GameState;
-import ch.stair.hackday.packhack.dto.SetupConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -22,9 +20,9 @@ public class packHackRestController {
 
     @RequestMapping(value = "/start",
             method = RequestMethod.POST,
-            consumes = "application/json",
-            produces = "application/json")
-    public SetupConfig start(){
+            consumes = "text/plain",
+            produces = "text/plain")
+    public String start(){
         return this.agent.getAgentInformation();
     }
 
