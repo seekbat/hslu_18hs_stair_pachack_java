@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31816422-f874-4f75-9b68-dfbb0a4527ba" name="Default Changelist" comment="" />
+    <list default="true" id="31816422-f874-4f75-9b68-dfbb0a4527ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/agent/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/agent/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/agent/Pacman.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/agent/Pacman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/dto/SetupConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/rest/packHackRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ch/stair/hackday/packhack/rest/packHackRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,27 +81,37 @@
     <session id="-2070006764">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="xml" value="1" />
+          <entry key="java" value="2" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="2" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="java" value="331" />
+          <entry key="txt" value="71" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JAVA" value="331" />
+          <entry key="PLAIN_TEXT" value="71" />
           <entry key="XML" value="14" />
         </counts>
       </usages-collector>
@@ -97,76 +122,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Pacman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/rest/packHackRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Agent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/GameState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="510">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1462#1463#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1557#1558#0" expanded="true" />
+                <element signature="e#1607#1608#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,13 +163,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/SetupConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="20" column="94" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="94" />
               <folding>
-                <element signature="e#223#224#0" expanded="true" />
-                <element signature="e#254#255#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -223,6 +194,9 @@
     <replaceStrings>
       <replace />
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -597,7 +571,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayers.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/rest/Dir2.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/pseudoGameField.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/Dir2.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/Direction.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/FieldTypes.java" />
@@ -605,27 +578,28 @@
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/GameState.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/pacman.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/agent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Agent.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/rest/packHackRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Pacman.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/rest/packHackRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Pacman.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Agent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1672" />
-    <option name="y" value="-126" />
-    <option name="width" value="1940" />
-    <option name="height" value="1100" />
+    <option name="x" value="2151" />
+    <option name="y" value="-146" />
+    <option name="width" value="1194" />
+    <option name="height" value="869" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -639,6 +613,47 @@
               <item name="hslu_18hs_stair_pachack_java" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hslu_18hs_stair_pachack_java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hslu_18hs_stair_pachack_java" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="hslu_18hs_stair_pachack_java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hslu_18hs_stair_pachack_java" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hslu_18hs_stair_pachack_java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hslu_18hs_stair_pachack_java" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="packhack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hslu_18hs_stair_pachack_java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hslu_18hs_stair_pachack_java" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="packhack" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hslu_18hs_stair_pachack_java" type="58d84e3e:PackageViewProjectNode" />
+              <item name="hslu_18hs_stair_pachack_java_main" type="616d4139:PackageViewModuleNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -646,8 +661,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539692040134" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540386983166" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -705,13 +721,29 @@
       <option name="presentableId" value="Default" />
       <updated>1539263435782</updated>
     </task>
+    <task id="LOCAL-00001" summary="Removed unused SetupConfig and replaced it with a normal string">
+      <created>1539775851515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539775851515</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-126" width="1616" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="1913" y="-1087" width="2575" height="1415" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26413882" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2799205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -720,15 +752,16 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917467" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37236086" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993573" weight="0.37236086" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32917467" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32917467" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50064266" side_tool="true" visible="true" weight="0.37207487" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32917467" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32917467" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -744,6 +777,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removed unused SetupConfig and replaced it with a normal string" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unused SetupConfig and replaced it with a normal string" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Hello.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/GreetingController.java" />
@@ -757,82 +794,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_GameState-sources(1).zip/ch/stair/hackday/packhack/dto/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="13" selection-start-line="13" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.6/dad3a9fbbedf8781dfd138539cd82638ebad5678/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/exc/MismatchedInputException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_GameState-sources(1).zip/ch/stair/hackday/packhack/dto/GameState.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.6/dad3a9fbbedf8781dfd138539cd82638ebad5678/jackson-databind-2.9.6-sources.jar!/com/fasterxml/jackson/databind/exc/MismatchedInputException.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/Action.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/GameField.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/pseudoGameField.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayers.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/SetupConfig.java" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Pacman.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/rest/packHackRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/GameState.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/agent/Pacman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -850,28 +862,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/SetupConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="20" column="94" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="94" />
           <folding>
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/stair/hackday/packhack/dto/PublicPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="510">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1557#1558#0" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

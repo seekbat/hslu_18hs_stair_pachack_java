@@ -16,13 +16,15 @@ public class PublicPlayer
     private float[] position;
     private Direction direction;
     private boolean isPacman;
+    private boolean activeCapsule;
 
 
     @JsonCreator
-    public PublicPlayer(@JsonProperty("position")float[] position, @JsonProperty("direction") Direction direction, @JsonProperty("isPacman") boolean isPacman){
+    public PublicPlayer(@JsonProperty("position")float[] position, @JsonProperty("direction") Direction direction, @JsonProperty("isPacman") boolean isPacman, @JsonProperty("activeCapsule") boolean activeCapsule){
         this.position = position;
         this.direction = direction;
         this.isPacman = isPacman;
+        this.activeCapsule = activeCapsule;
     }
 
     public float[] getPosition ()
@@ -53,6 +55,14 @@ public class PublicPlayer
     public void setIsPacman (boolean isPacman)
     {
         this.isPacman = isPacman;
+    }
+
+    public boolean isActiveCapsule() {
+        return activeCapsule;
+    }
+
+    public void setActiveCapsule(boolean activeCapsule) {
+        this.activeCapsule = activeCapsule;
     }
 
     @Override
