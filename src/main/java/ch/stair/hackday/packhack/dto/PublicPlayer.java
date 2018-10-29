@@ -16,15 +16,15 @@ public class PublicPlayer
     private float[] position;
     private Direction direction;
     private boolean isPacman;
-    private boolean activeCapsule;
+    private boolean weakened;
 
 
     @JsonCreator
-    public PublicPlayer(@JsonProperty("position")float[] position, @JsonProperty("direction") Direction direction, @JsonProperty("isPacman") boolean isPacman, @JsonProperty("activeCapsule") boolean activeCapsule){
+    public PublicPlayer(@JsonProperty("position")float[] position, @JsonProperty("direction") Direction direction, @JsonProperty("isPacman") boolean isPacman, @JsonProperty("weakened") boolean weakened){
         this.position = position;
         this.direction = direction;
         this.isPacman = isPacman;
-        this.activeCapsule = activeCapsule;
+        this.weakened = weakened;
     }
 
     public float[] getPosition ()
@@ -57,12 +57,12 @@ public class PublicPlayer
         this.isPacman = isPacman;
     }
 
-    public boolean isActiveCapsule() {
-        return activeCapsule;
+    public boolean isWeakened() {
+        return weakened;
     }
 
-    public void setActiveCapsule(boolean activeCapsule) {
-        this.activeCapsule = activeCapsule;
+    public void setWeakened(boolean weakened) {
+        this.weakened = weakened;
     }
 
     @Override
