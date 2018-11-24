@@ -49,30 +49,30 @@ public class AnalyticsUtils implements Agent {
     public String getAgentInformation() {
         return null;
 
+    }
 
-        private List<Direction> getPossibilites ( int x, int y){
-            List<Direction> possibilites = new LinkedList<>();
-            if (y - 1 >= 0) { //check north
-                if (game[x][y - 1] == FieldTypes.WALL) {
-                    possibilites.add(Direction.NORTH);
-                }
+    private List<Direction> getPossibilites(int x, int y) {
+        List<Direction> possibilites = new LinkedList<>();
+        if (y - 1 >= 0) { //check north
+            if (game[x][y - 1] == FieldTypes.WALL) {
+                possibilites.add(Direction.NORTH);
             }
-            if (x + 1 <= game.length) { //check east
-                if (game[x + 1][y]) {
-                    possibilites.add(Direction.EAST);
-                }
-            }
-            if (y + 1 <= game[0].length) {
-                if (game[x][y + 1] == FieldTypes.WALL) {
-                    possibilites.add(Direction.SOUTH);
-                }
-            }
-            if (x - 1 >= 0) {
-                if (game[x - 1][y] == FieldTypes.WALL) {
-                    possibilites.add(Direction.WEST);
-                }
-            }
-            return possibilites;
         }
+        if (x + 1 <= game.length) { //check east
+            if (game[x + 1][y] == FieldTypes.WALL) {
+                possibilites.add(Direction.EAST);
+            }
+        }
+        if (y + 1 <= game[0].length) { //check south
+            if (game[x][y + 1] == FieldTypes.WALL) {
+                possibilites.add(Direction.SOUTH);
+            }
+        }
+        if (x - 1 >= 0) { //check west
+            if (game[x - 1][y] == FieldTypes.WALL) {
+                possibilites.add(Direction.WEST);
+            }
+        }
+        return possibilites;
     }
 }
