@@ -4,8 +4,6 @@ import ch.stair.hackday.packhack.agent.Agent;
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.FieldTypes;
 
-import ch.stair.hackday.packhack.dto.Direction;
-import ch.stair.hackday.packhack.dto.FieldTypes;
 
 
 import java.util.LinkedList;
@@ -15,6 +13,8 @@ public class AnalyticsUtils implements Agent {
     private static int ENEMY_POINTS = 0;
     private boolean isHunter = false;
     private FieldTypes[][] game;
+    private int posX;
+    private int posY;
 
     public AnalyticsUtils(FieldTypes[][] initialGameField) {
         this.game = initialGameField;
