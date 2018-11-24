@@ -8,9 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AnalyticsUtils {
-    public int getPathDistance(int x1, int y1, int x2, int y2,FieldTypes[][] gamefield){
-
-    }
     private List<Direction> getPossibilites(int x, int y){
         List<Direction> possibilites = new LinkedList<>();
         if(y-1>=0){ //check north
