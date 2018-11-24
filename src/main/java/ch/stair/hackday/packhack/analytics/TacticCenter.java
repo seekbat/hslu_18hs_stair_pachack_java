@@ -65,10 +65,6 @@ public class TacticCenter {
     private Direction getDirectionForCounterMeasures() {
        Map map = new Map(AnalyticsUtils.game);
         if(isEnemyNearMe() && (AnalyticsUtils.myself.getState() == PlayerState.PACMAN || AnalyticsUtils.enemy.getState() == PlayerState.IMMORTAL)) {
-            if(!reverse){
-                oldLength = directionHistory.size();
-            }
-            reverse = true;
             return inverseMove((Direction) directionHistory.pollLast());
         }
 
