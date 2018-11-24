@@ -2,6 +2,7 @@ package ch.stair.hackday.packhack.rest;
 
 import ch.stair.hackday.packhack.agent.Agent;
 import ch.stair.hackday.packhack.agent.Pacman;
+import ch.stair.hackday.packhack.analytics.AnalyticsUtils;
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.GameState;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import javax.annotation.PostConstruct;
 public class packHackRestController {
 
     private Agent agent;
+    private AnalyticsUtils analyticsUtils;
 
     @PostConstruct
     public void populateMovieCache() {
@@ -32,6 +34,11 @@ public class packHackRestController {
             produces = "application/json")
     public Direction chooseAction(
             @RequestBody GameState gameField) {
+        if(analyticsUtils == null) {
+            analyticsUtils = new AnalyticsUtils(gameField.getGameField());
+        }
         return this.agent.chooseAction();
     }
+
+
 }
