@@ -9,8 +9,9 @@ import java.util.List;
 public class Player {
     private int posX;
     private int posY;
+    private PlayerState state;
 
-    public Player(int x, int y){
+    public Player(int x, int y) {
         this.posX = x;
         this.posY = y;
     }
@@ -41,11 +42,32 @@ public class Player {
         return possibilites;
     }
 
+    public void setState(PlayerColor color, FieldTypes[][] game) {
+        if (this.posX <= game.length / 2) {
+            if (color == PlayerColor.RED){
+                this.state = PlayerState.GOST;
+            }else if(color == PlayerColor.BLUE){
+                this.state = PlayerState.PACMAN;
+            }
+        }else {
+            if (color == PlayerColor.RED){
+                this.state = PlayerState.PACMAN;
+            }else if(color == PlayerColor.BLUE){
+                this.state = PlayerState.GOST;
+            }
+        }
+    }
+
 
     public int getPosX() {
         return this.posX;
     }
+
     public int getPosY() {
         return this.posY;
+    }
+
+    public PlayerState getState() {
+        return this.state;
     }
 }
