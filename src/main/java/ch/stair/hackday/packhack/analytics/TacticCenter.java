@@ -7,7 +7,17 @@ public class TacticCenter {
     int enemyDistanceRadar = 4;
 
     public Tactic getTactic() {
-        return getNewStrategy();
+        System.out.println();
+
+        System.out.println("================= TACTIC =================");
+
+        Tactic newStrategy = getNewStrategy();
+        System.out.println("MODE            : " + newStrategy);
+        System.out.println("ENEMY-EATABLE   : " + isEatable());
+        System.out.println("DEFENDER-MODE   : " + inDefenderMode());
+        System.out.println("ENEMY-RADAR     : " + isEnemyNearMe());
+        System.out.println();
+        return newStrategy;
     }
 
     private Tactic getNewStrategy() {

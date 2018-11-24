@@ -28,19 +28,19 @@ public class AnalyticsUtils  {
     }
 
     private void logActualStatus() {
-        System.out.println("================== ENEMY ==================");
-        System.out.println("Position X  : " + enemy.getPosX());
-        System.out.println("Position Y  : " + enemy.getPosY());
-        System.out.println("State       : " + enemy.getState());
-        System.out.println("Points      : " + ENEMY_POINTS);
-        System.out.println("Colour      : " + enemy.getColor());
+        System.out.println("================= ENEMY ==================");
+        System.out.println("Position X      : " + enemy.getPosX());
+        System.out.println("Position Y      : " + enemy.getPosY());
+        System.out.println("State           : " + enemy.getState());
+        System.out.println("Points          : " + ENEMY_POINTS);
+        System.out.println("Colour          : " + enemy.getColor());
         System.out.println();
         System.out.println("================= MYSELF =================");
-        System.out.println("Position X  : " + myself.getPosX());
-        System.out.println("Position Y  : " + myself.getPosY());
-        System.out.println("State       : " + myself.getState());
-        System.out.println("Points      : " + MY_POINTS);
-        System.out.println("Colour      : " + myself.getColor());
+        System.out.println("Position X      : " + myself.getPosX());
+        System.out.println("Position Y      : " + myself.getPosY());
+        System.out.println("State           : " + myself.getState());
+        System.out.println("Points          : " + MY_POINTS);
+        System.out.println("Colour          : " + myself.getColor());
 
     }
 
@@ -50,13 +50,13 @@ public class AnalyticsUtils  {
 
 
     private void countEnemyPoints() {
-        if (lastGameStat[enemy.getPosX()][enemy.getPosY()] == FieldTypes.FOOD) {
+        if (lastGameStat[enemy.getPosY()][enemy.getPosX()] == FieldTypes.FOOD) {
             ENEMY_POINTS++;
         }
     }
 
     private void countMyPoints() {
-        if (lastGameStat[myself.getPosX()][myself.getPosY()] == FieldTypes.FOOD) {
+        if (lastGameStat[myself.getPosY()][myself.getPosX()] == FieldTypes.FOOD) {
             MY_POINTS++;
         }
         lastGameStat = game;
