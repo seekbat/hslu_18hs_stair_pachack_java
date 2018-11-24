@@ -3,26 +3,25 @@ package ch.stair.hackday.packhack.analytics;
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.FieldTypes;
 import ch.stair.hackday.packhack.player.Player;
-import org.springframework.util.StringUtils;
 
 
 public class AnalyticsUtils  {
     protected static int ENEMY_POINTS = 0;
     protected static int MY_POINTS = 0;
     private boolean isHunter = false;
-    private FieldTypes[][] game;
-    private FieldTypes[][] lastGameStat;
-    private Player myself;
-    private Player enemy;
+    protected static FieldTypes[][] game;
+    protected static FieldTypes[][] lastGameStat;
+    protected static Player myself;
+    protected static Player enemy;
 
     public AnalyticsUtils(FieldTypes[][] initialGameField) {
-        this.game = initialGameField;
+        game = initialGameField;
     }
 
     public void nextStepInformation(FieldTypes[][] actualGameField, Player enemy, Player myself) {
-        this.myself = myself;
-        this.enemy = enemy;
-        this.lastGameStat = actualGameField;
+        AnalyticsUtils.myself = myself;
+        AnalyticsUtils.enemy = enemy;
+        lastGameStat = actualGameField;
         countEnemyPoints();
         countMyPoints();
         logActualStatus();

@@ -1,5 +1,7 @@
 package ch.stair.hackday.packhack.analytics;
 
+import ch.stair.hackday.packhack.player.PlayerState;
+
 public class TacticCenter {
     int bufferPoints = 4;
     int enemyDistanceRadar = 4;
@@ -33,11 +35,12 @@ public class TacticCenter {
     }
 
     private boolean isEatable() {
-        return false;
+        return !(AnalyticsUtils.enemy.getState().getCode() == PlayerState.IMMORTAL.getCode());
     }
 
     private boolean inDefenderMode() {
-        return false;
+        return (AnalyticsUtils.myself.getState().getCode() == PlayerState.GOST.getCode() &&
+                AnalyticsUtils.enemy.getState().getCode() != PlayerState.IMMORTAL.getCode());
     }
 
 }
