@@ -2,6 +2,7 @@ package ch.stair.hackday.packhack.player;
 
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.FieldTypes;
+import ch.stair.hackday.packhack.player.AStar.Node;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -68,9 +69,34 @@ public class Player {
             }
         }
     }
-    public List<Direction>findPath(int goalX, int goalY, FieldTypes[][] map){
-        if(this.posX == goalX && this.posY == goalY){
-            return new LinkedList<>();
+
+    public Node getNextFood(FieldTypes[][] game){
+        List<Thread> threadPool = new LinkedList<>();
+        int width = game.length/2;
+        int height = game[0].length;
+        int offsetX = 0;
+        FieldTypes[][] foodArea = new FieldTypes[width][height];
+
+        if(color == PlayerColor.BLUE){
+            offsetX = game.length/2;
+        }
+
+        for(int x = offsetX; x<((game.length/2)+offsetX);x++){
+            for(int y=0; y<game[0].length; y++){
+                foodArea[x-offsetX][y] = game[x][y];
+            }
+        }
+        List<Coordinate> foodNodes = getFoodNodes(foodArea);
+        for (Coordinate foodNode : foodNodes) {
+            Thread thread= new Thread(new CalculatorThread(this.posX,this.posY, foodNode.getX(), foodNode.getY(), game));
+            threadPool.add(thread);
+            thread.start();
+        }
+
+        while(!threadPool.isEmpty()){
+            for (Thread thread :  threadPool) {
+                if (th)
+            }
         }
         return null;
     }
@@ -86,5 +112,17 @@ public class Player {
 
     public PlayerState getState() {
         return this.state;
+    }
+
+    private List<Coordinate> getFoodNodes(FieldTypes[][] foodArea){
+        List<Coordinate> foodNodes = new LinkedList<>();
+        for(int x = foodArea.length; i < foodArea.length;x++){
+            for(int y=0; i<foodArea[0].length; y++){
+                if(foodArea[x][y] == FieldTypes.FOOD){
+                    foodNodes.add(new Coordinate(x,y));
+                }
+            }
+        }
+        return foodNodes;
     }
 }
