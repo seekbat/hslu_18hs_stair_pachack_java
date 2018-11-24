@@ -1,15 +1,18 @@
 package ch.stair.hackday.packhack.agent;
 
 import ch.stair.hackday.packhack.analytics.AnalyticsUtils;
+import ch.stair.hackday.packhack.analytics.TacticCenter;
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.FieldTypes;
 import ch.stair.hackday.packhack.dto.GameState;
 import ch.stair.hackday.packhack.dto.PublicPlayer;
 import ch.stair.hackday.packhack.player.Player;
+import ch.stair.hackday.packhack.player.PlayerState;
 
 public class Pacman implements Agent {
 
     private AnalyticsUtils analyticsUtils;
+    private TacticCenter tacticCenter = new TacticCenter();
 
 
 
@@ -32,7 +35,18 @@ public class Pacman implements Agent {
 
     private Player transformPlayer(PublicPlayer publicPlayer) {
         return new Player((int) publicPlayer.getPosition()[0],
-                (int) publicPlayer.getPosition()[1]);
+                (int) publicPlayer.getPosition()[1], transformState(publicPlayer));
+    }
+
+    private PlayerState transformState(PublicPlayer publicPlayer) {
+        if(publicPlayer.getIsPacman() && publicPlayer.isWeakened()) {
+            return PlayerState.PACMAN;
+        } else if(!publicPlayer.getIsPacman()) {
+            return PlayerState.GOST;
+        } else if(publicPlayer.getIsPacman() && !publicPlayer.isWeakened()) {
+            return PlayerState.IMMORTAL;
+        }
+        throw new IllegalStateException("Player State Transformers is invalid :(");
     }
 
     @Override
@@ -42,7 +56,27 @@ public class Pacman implements Agent {
 
     @Override
     public Direction chooseAction() {
-       //return analyticsUtils.getNextStep();
+        switch (tacticCenter.getTactic()) {
+            case ESCAPE_MODE:
+                return getDirectionForEscapeMode();
+            case COLLECTOR_MODE:
+                return getDirectionForCollectorMode();
+            case COUNTER_MEASURES:
+                return getDirectionForCounterMeasures();
+            default:
+                return Direction.STOP;
+        }
+    }
+
+    private Direction getDirectionForEscapeMode() {
+        return Direction.STOP;
+    }
+
+    private Direction getDirectionForCounterMeasures() {
+        return Direction.STOP;
+    }
+
+    private Direction getDirectionForCollectorMode() {
         return Direction.STOP;
     }
 }

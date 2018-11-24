@@ -11,9 +11,10 @@ public class Player {
     private int posY;
     private PlayerState state;
 
-    public Player(int x, int y) {
+    public Player(int x, int y, PlayerState state) {
         this.posX = x;
         this.posY = y;
+        this.state = state;
     }
 
 
@@ -61,7 +62,7 @@ public class Player {
         if(this.posX == goalX && this.posY == goalY){
             return new LinkedList<>();
         }
-
+        return null;
     }
 
 

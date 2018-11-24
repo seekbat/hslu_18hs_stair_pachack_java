@@ -6,7 +6,8 @@ import ch.stair.hackday.packhack.player.Player;
 
 
 public class AnalyticsUtils  {
-    private static int ENEMY_POINTS = 0;
+    protected static int ENEMY_POINTS = 0;
+    protected static int MY_POINTS = 0;
     private boolean isHunter = false;
     private FieldTypes[][] game;
     private FieldTypes[][] lastGameStat;
@@ -32,6 +33,13 @@ public class AnalyticsUtils  {
     private void countEnemyPoints() {
         if (lastGameStat[enemy.getPosX()][enemy.getPosY()] == FieldTypes.FOOD) {
             ENEMY_POINTS++;
+        }
+        lastGameStat = game;
+    }
+
+    private void countMyPoints() {
+        if (lastGameStat[myself.getPosX()][myself.getPosY()] == FieldTypes.FOOD) {
+            MY_POINTS++;
         }
         lastGameStat = game;
     }
