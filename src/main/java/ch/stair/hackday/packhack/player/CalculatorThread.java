@@ -17,7 +17,7 @@ public class CalculatorThread implements Callable {
         this.startX = startX;
         this.startY = startY;
         this.goalX = goalX;
-        this.startY = goalY;
+        this.goalY = goalY;
         this.game = game;
     }
 
@@ -25,7 +25,9 @@ public class CalculatorThread implements Callable {
     public Object call() throws Exception {
         Map map = new Map(game);
         steps = map.getPathLenght(startX,startY,goalX,goalY);
-        return steps;
+        Coordinate step = new Coordinate(goalX,goalY);
+        step.setSteps(steps);
+        return step;
     }
 
     public int getSteps(){

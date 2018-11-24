@@ -60,34 +60,34 @@ public class Player {
 
     public void setState(PlayerColor color, FieldTypes[][] game) {
         if (this.posX <= game.length / 2) {
-            if (color == PlayerColor.RED){
+            if (color == PlayerColor.RED) {
                 this.state = PlayerState.GOST;
-            }else if(color == PlayerColor.BLUE){
+            } else if (color == PlayerColor.BLUE) {
                 this.state = PlayerState.PACMAN;
             }
-        }else {
-            if (color == PlayerColor.RED){
+        } else {
+            if (color == PlayerColor.RED) {
                 this.state = PlayerState.PACMAN;
-            }else if(color == PlayerColor.BLUE){
+            } else if (color == PlayerColor.BLUE) {
                 this.state = PlayerState.GOST;
             }
         }
     }
 
-    public Node getNextFood(FieldTypes[][] game){
+    public Coordinate getNextFood(FieldTypes[][] game) {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(8);
-        int width = game.length/2;
+        int width = game.length / 2;
         int height = game[0].length;
         int offsetX = 0;
         FieldTypes[][] foodArea = new FieldTypes[width][height];
 
-        if(color == PlayerColor.BLUE){
-            offsetX = game.length/2;
+        if (color == PlayerColor.BLUE) {
+            offsetX = game.length / 2;
         }
 
-        for(int x = offsetX; x<((game.length/2)+offsetX);x++){
-            for(int y=0; y<game[0].length; y++){
-                foodArea[x-offsetX][y] = game[x][y];
+        for (int x = offsetX; x < ((game.length / 2) + offsetX); x++) {
+            for (int y = 0; y < game[0].length; y++) {
+                foodArea[x - offsetX][y] = game[x][y];
             }
         }
         List<Coordinate> foodNodes = getFoodNodes(foodArea);
@@ -97,25 +97,29 @@ public class Player {
 
         }
 
-        int minSteps = Integer.MAX_VALUE;
+        Coordinate minSteps;
         int counter = 0;
-        while(futureList.size() <= counter){
+        while (futureList.size() <= counter) {
             for (Future node : futureList) {
-                if (node.isDone()){
-                    int steps = Integer.MAX_VALUE;
-                    try{
-                        steps = (int) node.get();
-                    }catch (Exception e){
+                if (node.isDone()) {
+                    Coordinate steps;
+                    try {
+                        steps = (Coordinate) node.get();
+                    } catch (Exception e) {
                         System.out.print("Lukas is Tschuld!");
                     }
-                    if (steps<minSteps){
-                        minSteps=steps;
+                    if (steps != null) {
+                        if (steps.getSteps() < minSteps) {
+                            minSteps = steps;
+                        }
+                    }else {
+                        minSteps = steps;
                     }
                     counter++;
                 }
             }
         }
-        return null;
+        return minSteps;
     }
 
 
@@ -131,12 +135,12 @@ public class Player {
         return this.state;
     }
 
-    private List<Coordinate> getFoodNodes(FieldTypes[][] foodArea){
+    private List<Coordinate> getFoodNodes(FieldTypes[][] foodArea) {
         List<Coordinate> foodNodes = new LinkedList<>();
-        for(int x = foodArea.length; i < foodArea.length;x++){
-            for(int y=0; i<foodArea[0].length; y++){
-                if(foodArea[x][y] == FieldTypes.FOOD){
-                    foodNodes.add(new Coordinate(x,y));
+        for (int x = foodArea.length; i < foodArea.length; x++) {
+            for (int y = 0; i < foodArea[0].length; y++) {
+                if (foodArea[x][y] == FieldTypes.FOOD) {
+                    foodNodes.add(new Coordinate(x, y));
                 }
             }
         }
