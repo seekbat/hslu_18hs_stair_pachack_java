@@ -100,7 +100,7 @@ public class Player {
 
         int minSteps = Integer.MAX_VALUE;
         int counter = 0;
-        while(!futureList.size() <= counter){
+        while(futureList.size() <= counter){
             for (Future node : futureList) {
                 if (node.isDone()){
                     int steps = Integer.MAX_VALUE;
@@ -134,8 +134,8 @@ public class Player {
 
     private List<Coordinate> getFoodNodes(FieldTypes[][] foodArea){
         List<Coordinate> foodNodes = new LinkedList<>();
-        for(int x = foodArea.length; i < foodArea.length;x++){
-            for(int y=0; i<foodArea[0].length; y++){
+        for(int x = foodArea.length; x < foodArea.length;x++){
+            for(int y=0; y<foodArea[0].length; y++){
                 if(foodArea[x][y] == FieldTypes.FOOD){
                     foodNodes.add(new Coordinate(x,y));
                 }

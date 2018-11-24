@@ -55,8 +55,8 @@ public class Pacman implements Agent {
 
 
     private Player transformPlayer(PublicPlayer publicPlayer) {
-        return new Player((int) publicPlayer.getPosition()[1],
-                (int) publicPlayer.getPosition()[0], transformState(publicPlayer), null);
+        return new Player((int) publicPlayer.getPosition()[0],
+                (int) publicPlayer.getPosition()[1], transformState(publicPlayer), null);
     }
 
     private PlayerState transformState(PublicPlayer publicPlayer) {
