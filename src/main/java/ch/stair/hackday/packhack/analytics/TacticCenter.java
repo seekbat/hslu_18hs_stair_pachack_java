@@ -15,7 +15,7 @@ import static ch.stair.hackday.packhack.analytics.Tactic.ESCAPE_MODE;
 
 public class TacticCenter {
     int bufferPoints = 4;
-    int enemyDistanceRadar = 2;
+    int enemyDistanceRadar = 4;
     private int enemyDistance = 0;
     private Coordinate initialPoint = null;
     private int oldLength = 0;
