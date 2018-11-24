@@ -13,9 +13,19 @@ public class Player {
     private PlayerState state;
     private PlayerColor color;
 
-    public Player(int x, int y) {
+    public Player(int x, int y, PlayerState state, PlayerColor color) {
         this.posX = x;
         this.posY = y;
+        this.state = state;
+        this.color = color;
+    }
+
+    public PlayerColor getColor() {
+        return color;
+    }
+
+    public void setColor(PlayerColor color) {
+        this.color = color;
     }
 
 
@@ -88,7 +98,7 @@ public class Player {
                 if (th)
             }
         }
-
+        return null;
     }
 
 
