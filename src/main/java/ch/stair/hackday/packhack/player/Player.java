@@ -7,7 +7,6 @@ import ch.stair.hackday.packhack.player.AStar.Node;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -100,7 +99,7 @@ public class Player {
 
         int minSteps = Integer.MAX_VALUE;
         int counter = 0;
-        while(!futureList.size() <= counter){
+        while(futureList.size() <= counter){
             for (Future node : futureList) {
                 if (node.isDone()){
                     int steps = Integer.MAX_VALUE;
