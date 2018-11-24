@@ -10,11 +10,21 @@ public class Player {
     private int posX;
     private int posY;
     private PlayerState state;
+    private PlayerColor color;
 
-    public Player(int x, int y, PlayerState state) {
+    public Player(int x, int y, PlayerState state, PlayerColor color) {
         this.posX = x;
         this.posY = y;
         this.state = state;
+        this.color = color;
+    }
+
+    public PlayerColor getColor() {
+        return color;
+    }
+
+    public void setColor(PlayerColor color) {
+        this.color = color;
     }
 
 
