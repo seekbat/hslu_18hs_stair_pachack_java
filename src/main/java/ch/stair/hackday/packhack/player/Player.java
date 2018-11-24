@@ -57,6 +57,12 @@ public class Player {
             }
         }
     }
+    public List<Direction>findPath(int goalX, int goalY, FieldTypes[][] map){
+        if(this.posX == goalX && this.posY == goalY){
+            return new LinkedList<>();
+        }
+
+    }
 
 
     public int getPosX() {
