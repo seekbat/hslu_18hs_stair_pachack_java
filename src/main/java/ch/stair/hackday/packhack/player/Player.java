@@ -4,8 +4,13 @@ import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.FieldTypes;
 import ch.stair.hackday.packhack.player.AStar.Node;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class Player {
     private int posX;
@@ -71,7 +76,7 @@ public class Player {
     }
 
     public Node getNextFood(FieldTypes[][] game){
-        List<Thread> threadPool = new LinkedList<>();
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(8);
         int width = game.length/2;
         int height = game[0].length;
         int offsetX = 0;
@@ -87,15 +92,28 @@ public class Player {
             }
         }
         List<Coordinate> foodNodes = getFoodNodes(foodArea);
+        List<Future> futureList = new ArrayList<>();
         for (Coordinate foodNode : foodNodes) {
-            Thread thread= new Thread(new CalculatorThread(this.posX,this.posY, foodNode.getX(), foodNode.getY(), game));
-            threadPool.add(thread);
-            thread.start();
+            futureList.add(executor.submit(new CalculatorThread(this.getPosX(), this.getPosY(), foodNode.getX(), foodNode.getY(), game)));
+
         }
 
-        while(!threadPool.isEmpty()){
-            for (Thread thread :  threadPool) {
-                if (th)
+        int minSteps = Integer.MAX_VALUE;
+        int counter = 0;
+        while(!futureList.size() <= counter){
+            for (Future node : futureList) {
+                if (node.isDone()){
+                    int steps = Integer.MAX_VALUE;
+                    try{
+                        steps = (int) node.get();
+                    }catch (Exception e){
+                        System.out.print("Lukas is Tschuld!");
+                    }
+                    if (steps<minSteps){
+                        minSteps=steps;
+                    }
+                    counter++;
+                }
             }
         }
         return null;

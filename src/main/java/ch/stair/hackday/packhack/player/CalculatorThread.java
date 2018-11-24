@@ -3,7 +3,9 @@ package ch.stair.hackday.packhack.player;
 import ch.stair.hackday.packhack.dto.FieldTypes;
 import ch.stair.hackday.packhack.player.AStar.Map;
 
-public class CalculatorThread implements Runnable {
+import java.util.concurrent.Callable;
+
+public class CalculatorThread implements Callable {
     private int startX;
     private int startY;
     private int goalX;
@@ -20,9 +22,10 @@ public class CalculatorThread implements Runnable {
     }
 
     @Override
-    public void run() {
+    public Object call() throws Exception {
         Map map = new Map(game);
         steps = map.getPathLenght(startX,startY,goalX,goalY);
+        return steps;
     }
 
     public int getSteps(){
