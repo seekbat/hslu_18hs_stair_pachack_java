@@ -75,7 +75,8 @@ public class Player {
     }
 
     public Coordinate getNextFood(FieldTypes[][] game) {
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(8);
+        System.out.println("START");
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(3);
         int width = game.length / 2;
         int height = game[0].length;
         int offsetX = 0;
@@ -84,7 +85,7 @@ public class Player {
         if (color == PlayerColor.BLUE) {
             offsetX = game.length / 2;
         }
-
+        System.out.println("WEEEE");
         for (int x = offsetX; x < ((game.length / 2) + offsetX); x++) {
             for (int y = 0; y < game[0].length; y++) {
                 foodArea[x - offsetX][y] = game[x][y];
@@ -93,28 +94,30 @@ public class Player {
         List<Coordinate> foodNodes = getFoodNodes(foodArea);
         List<Future> futureList = new ArrayList<>();
         for (Coordinate foodNode : foodNodes) {
+            System.out.println("HEREEEEEEEEE");
             futureList.add(executor.submit(new CalculatorThread(this.getPosX(), this.getPosY(), foodNode.getX(), foodNode.getY(), game)));
 
         }
 
-        Coordinate minSteps;
+        Coordinate minSteps = null;
         int counter = 0;
         while (futureList.size() <= counter) {
             for (Future node : futureList) {
                 if (node.isDone()) {
-                    Coordinate steps;
+                    Coordinate steps = null;
                     try {
                         steps = (Coordinate) node.get();
                     } catch (Exception e) {
                         System.out.print("Lukas is Tschuld!");
                     }
                     if (steps != null) {
-                        if (steps.getSteps() < minSteps) {
+                        if (steps.getSteps() < minSteps.getSteps()) {
                             minSteps = steps;
                         }
                     }else {
                         minSteps = steps;
                     }
+                    System.out.println(counter);
                     counter++;
                 }
             }

@@ -64,40 +64,20 @@ public class Pacman implements Agent {
             return PlayerState.PACMAN;
         } else if(!publicPlayer.getIsPacman()) {
             return PlayerState.GOST;
-        } else if(publicPlayer.getIsPacman() && publicPlayer.isWeakened()) {
+        } else {
             return PlayerState.IMMORTAL;
         }
-        throw new IllegalStateException("Player State Transformers is invalid :(");
     }
 
     @Override
     public String getAgentInformation() {
-        return "Paci Pac";
+        return "";
     }
 
     @Override
     public Direction chooseAction() {
-        switch (tacticCenter.getTactic()) {
-            case ESCAPE_MODE:
-                return getDirectionForEscapeMode();
-            case COLLECTOR_MODE:
-                return getDirectionForCollectorMode();
-            case COUNTER_MEASURES:
-                return getDirectionForCounterMeasures();
-            default:
-                return Direction.STOP;
-        }
+      return tacticCenter.getNextStep();
     }
 
-    private Direction getDirectionForEscapeMode() {
-        return Direction.STOP;
-    }
 
-    private Direction getDirectionForCounterMeasures() {
-        return Direction.STOP;
-    }
-
-    private Direction getDirectionForCollectorMode() {
-        return Direction.STOP;
-    }
 }
