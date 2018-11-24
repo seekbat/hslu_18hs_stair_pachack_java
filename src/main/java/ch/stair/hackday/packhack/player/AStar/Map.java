@@ -179,9 +179,9 @@ public class Map {
 
         Node next = list.get(0);
 
-        if(startY>next.getY()) return Direction.NORTH;
+        if(startY<next.getY()) return Direction.NORTH;
         if(startX<next.getX()) return Direction.EAST;
-        if(startY<next.getY()) return Direction.SOUTH;
+        if(startY>next.getY()) return Direction.SOUTH;
         if(startX>next.getX()) return Direction.WEST;
         return Direction.STOP;
     }

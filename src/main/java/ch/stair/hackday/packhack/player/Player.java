@@ -2,6 +2,7 @@ package ch.stair.hackday.packhack.player;
 
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.FieldTypes;
+import ch.stair.hackday.packhack.player.AStar.Map;
 import ch.stair.hackday.packhack.player.AStar.Node;
 
 import java.util.ArrayList;
@@ -74,23 +75,41 @@ public class Player {
         }
     }
 
+    public Coordinate getNextFood2(FieldTypes[][] game) {
+        for (int x = 7; x < game.length; x++) {
+            for (int y = 0; y < game.length; y++) {
+                if(game[y][x] == FieldTypes.FOOD) {
+                    return new Coordinate(x, y);
+                }
+
+            }
+        }
+        return null;
+    }
+
     public Coordinate getNextFood(FieldTypes[][] game) {
         System.out.println("START");
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(3);
-        int width = game.length / 2;
-        int height = game[0].length;
+        int height = game.length;
+        int width = game[0].length / 2;
         int offsetX = 0;
         FieldTypes[][] foodArea = new FieldTypes[width][height];
-
-        if (color == PlayerColor.BLUE) {
-            offsetX = game.length / 2;
+        for (FieldTypes[] fieldTypes : game) {
+            System.out.println(fieldTypes[0] + " " + fieldTypes[1]);
         }
-        System.out.println("WEEEE");
-        for (int x = offsetX; x < ((game.length / 2) + offsetX); x++) {
-            for (int y = 0; y < game[0].length; y++) {
-                foodArea[x - offsetX][y] = game[x][y];
+        if (color == PlayerColor.RED) {
+            for (int y = 7; y < 16; y++) {
+                for (int x = 0; x < 16; x++) {
+                    foodArea[y][x] = game[y][x];
+                }
             }
         }
+        System.out.println("WEEEE");
+      /*  for (int x = offsetX; x < ((game.length / 2) + offsetX); x++) {
+            for (int y = 0; y < game[0].length; y++) {
+                foodArea[x - offsetX][y] = game[y][x];
+            }
+        }*/
         List<Coordinate> foodNodes = getFoodNodes(foodArea);
         List<Future> futureList = new ArrayList<>();
         for (Coordinate foodNode : foodNodes) {

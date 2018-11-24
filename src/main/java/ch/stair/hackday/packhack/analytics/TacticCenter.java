@@ -5,6 +5,9 @@ import ch.stair.hackday.packhack.player.AStar.Map;
 import ch.stair.hackday.packhack.player.Coordinate;
 import ch.stair.hackday.packhack.player.PlayerState;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 import static ch.stair.hackday.packhack.analytics.Tactic.COLLECTOR_MODE;
 import static ch.stair.hackday.packhack.analytics.Tactic.COUNTER_MEASURES;
 import static ch.stair.hackday.packhack.analytics.Tactic.ESCAPE_MODE;
@@ -12,13 +15,18 @@ import static ch.stair.hackday.packhack.analytics.Tactic.ESCAPE_MODE;
 
 public class TacticCenter {
     int bufferPoints = 4;
-    int enemyDistanceRadar = 4;
+    int enemyDistanceRadar = 2;
     private int enemyDistance = 0;
+    private Coordinate initialPoint = null;
+    private int oldLength = 0;
+    private boolean reverse = false;
+    private boolean back = false;
+    private Deque directionHistory = new ArrayDeque<Direction>();
 
     public Tactic getTactic() {
         System.out.println();
         System.out.println("================= TACTIC =================");
-        Tactic newStrategy = getNewStrategy();
+       /* Tactic newStrategy = getNewStrategy();
         System.out.println("MODE            : " + newStrategy);
         System.out.println("ENEMY-EATABLE   : " + isEatable());
         System.out.println("DEFENDER-MODE   : " + inDefenderMode());
@@ -26,10 +34,20 @@ public class TacticCenter {
         System.out.println("ENEMY-DISTANCE  : " + enemyDistance);
         System.out.println();
         return newStrategy;
+        */
+       return null;
+    }
+
+    private boolean isInLoop() {
+       return directionHistory.size() - oldLength > 2;
     }
 
     public Direction getNextStep() {
-        switch (getTactic()) {
+        if(initialPoint == null) {
+            initialPoint = new Coordinate(AnalyticsUtils.myself.getPosX(), AnalyticsUtils.myself.getPosY());
+        }
+        return getDirectionForCounterMeasures();
+        /*switch (getTactic()) {
             case ESCAPE_MODE:
                 return getDirectionForEscapeMode();
             case COLLECTOR_MODE:
@@ -38,7 +56,7 @@ public class TacticCenter {
                 return getDirectionForCounterMeasures();
             default:
                 return Direction.STOP;
-        }
+        }*/
     }
     private Direction getDirectionForEscapeMode() {
         return Direction.STOP;
@@ -46,8 +64,26 @@ public class TacticCenter {
 
     private Direction getDirectionForCounterMeasures() {
        Map map = new Map(AnalyticsUtils.game);
-       return map.getFirstDirection(AnalyticsUtils.myself.getPosX(), AnalyticsUtils.myself.getPosY(),
+        if(isEnemyNearMe() && (AnalyticsUtils.myself.getState() == PlayerState.PACMAN || AnalyticsUtils.enemy.getState() == PlayerState.IMMORTAL)) {
+            if(!reverse){
+                oldLength = directionHistory.size();
+            }
+            reverse = true;
+            return inverseMove((Direction) directionHistory.pollLast());
+        }
+
+       Direction direction =  map.getFirstDirection(AnalyticsUtils.myself.getPosX(), AnalyticsUtils.myself.getPosY(),
                AnalyticsUtils.enemy.getPosX(), AnalyticsUtils.enemy.getPosY());
+        directionHistory.add(direction);
+        return direction;
+    }
+
+    private Direction inverseMove(Direction direction) {
+        if(direction == Direction.NORTH) return Direction.SOUTH;
+        if(direction == Direction.SOUTH) return Direction.NORTH;
+        if(direction == Direction.EAST) return Direction.WEST;
+        if(direction == Direction.WEST) return Direction.EAST;
+        return Direction.STOP;
     }
 
     private Direction getDirectionForCollectorMode() {
@@ -57,25 +93,7 @@ public class TacticCenter {
                 c.getX(), c.getY());
     }
 
-    private Tactic getNewStrategy() {
-        if(isEnemyNearMe()) {
-            if(inDefenderMode()) {
-                if(isEatable()) {
-                    return COUNTER_MEASURES;
-                } else {
-                    return COLLECTOR_MODE;
-                }
-            } else {
-                return ESCAPE_MODE;
-            }
-        } else {
-            if(AnalyticsUtils.ENEMY_POINTS > bufferPoints + AnalyticsUtils.MY_POINTS) {
-                return COUNTER_MEASURES;
-            } else {
-                return COLLECTOR_MODE;
-            }
-        }
-    }
+
 
     private boolean isEnemyNearMe() {
         Map map = new Map(AnalyticsUtils.game);

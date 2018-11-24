@@ -4,6 +4,7 @@ import ch.stair.hackday.packhack.agent.Agent;
 import ch.stair.hackday.packhack.agent.Pacman;
 import ch.stair.hackday.packhack.dto.Direction;
 import ch.stair.hackday.packhack.dto.GameState;
+import ch.stair.hackday.packhack.dto.PublicPlayer;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
