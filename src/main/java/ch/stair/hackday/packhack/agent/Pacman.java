@@ -27,7 +27,7 @@ public class Pacman implements Agent {
         Player myself = transformPlayer(publicPlayers[agentID]);
         Player enemy = transformPlayer(publicPlayers[enemyID]);
 
-        analyticsUtils.prepareNextStep(actualGameField, myself, enemy);
+        analyticsUtils.nextStepInformation(actualGameField, myself, enemy);
     }
 
     private Player transformPlayer(PublicPlayer publicPlayer) {
@@ -42,6 +42,7 @@ public class Pacman implements Agent {
 
     @Override
     public Direction chooseAction() {
-        return analyticsUtils.getNextStep();
+       //return analyticsUtils.getNextStep();
+        return Direction.STOP;
     }
 }

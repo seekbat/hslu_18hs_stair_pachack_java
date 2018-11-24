@@ -17,10 +17,10 @@ public class AnalyticsUtils  {
         this.game = initialGameField;
     }
 
-    public void prepareNextStep(FieldTypes[][] actualGameField, Player enemy, Player myself) {
+    public void nextStepInformation(FieldTypes[][] actualGameField, Player enemy, Player myself) {
         this.myself = myself;
         this.enemy = enemy;
-        this.game = actualGameField;
+        this.lastGameStat = actualGameField;
         countEnemyPoints();
     }
 
