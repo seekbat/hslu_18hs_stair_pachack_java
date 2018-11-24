@@ -10,26 +10,31 @@ public class Player {
     private int posX;
     private int posY;
 
+    public Player(int x, int y){
+        this.posX = x;
+        this.posY = y;
+    }
 
-    public List<Direction> getPossibilites(int x, int y) {
+
+    public List<Direction> getPossibilites(FieldTypes[][] game) {
         List<Direction> possibilites = new LinkedList<>();
-        if (y - 1 >= 0) { //check north
-            if (game[x][y - 1] == FieldTypes.WALL) {
+        if (this.posY - 1 >= 0) { //check north
+            if (game[this.posX][this.posY - 1] == FieldTypes.WALL) {
                 possibilites.add(Direction.NORTH);
             }
         }
-        if (x + 1 <= game.length) { //check east
-            if (game[x + 1][y] == FieldTypes.WALL) {
+        if (this.posX + 1 <= game.length) { //check east
+            if (game[this.posX + 1][this.posY] == FieldTypes.WALL) {
                 possibilites.add(Direction.EAST);
             }
         }
-        if (y + 1 <= game[0].length) { //check south
-            if (game[x][y + 1] == FieldTypes.WALL) {
+        if (this.posY + 1 <= game[0].length) { //check south
+            if (game[this.posX][this.posY + 1] == FieldTypes.WALL) {
                 possibilites.add(Direction.SOUTH);
             }
         }
-        if (x - 1 >= 0) { //check west
-            if (game[x - 1][y] == FieldTypes.WALL) {
+        if (this.posX - 1 >= 0) { //check west
+            if (game[this.posX - 1][this.posY] == FieldTypes.WALL) {
                 possibilites.add(Direction.WEST);
             }
         }
